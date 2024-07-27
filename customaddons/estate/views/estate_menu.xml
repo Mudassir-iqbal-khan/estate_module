@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <!-- Main Real-Estate Menu -->
+        <menuitem id="menu_real_estate_root" name="Real Estate" sequence="1"/>
+
+        <!-- Advertisement Menu under Real-Estate -->
+        <menuitem id="menu_real_estate_advertisement" name="Advertisement" parent="menu_real_estate_root" sequence="2"/>
+
+        <!-- Properties Menu under Advertisement -->
+        <menuitem id="menu_real_estate_properties" name="Properties" parent="menu_real_estate_advertisement"
+                  action="action_estate_property" sequence="3"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Tree View Definition -->
+        <record id="view_property_type_tree" model="ir.ui.view">
+            <field name="name">estate.property.type.tree</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <tree string="Property Types">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View Definition -->
+        <record id="view_property_type_form" model="ir.ui.view">
+            <field name="name">estate.property.type.form</field>
+            <field name="model">estate.property.type</field>
+            <field name="arch" type="xml">
+                <form string="Property Type">
+                    <header>
+                        <!-- Save and Discard buttons -->
+                        <button name="action_save" type="object" string="Save" class="oe_highlight"/>
+                        <button name="action_discard" type="object" string="Discard" class="oe_link"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action Definition -->
+        <record id="action_estate_property_type" model="ir.actions.act_window">
+            <field name="name">Property Types</field>
+            <field name="res_model">estate.property.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Main Real-Estate Menu -->
+        <menuitem id="menu_real_estate_root" name="Real Estate" sequence="1"/>
+        <!-- Settings Menu under Real-Estate -->
+        <menuitem id="menu_real_estate_settings" name="Settings" parent="menu_real_estate_root" sequence="4"/>
+
+        <!-- Property Types Menu under Settings -->
+        <menuitem id="menu_real_estate_property_type" name="Property Types" parent="menu_real_estate_settings"
+                  action="action_estate_property_type" sequence="5"/>
+
+    </data>
+</odoo>
